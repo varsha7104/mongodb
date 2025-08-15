@@ -11,7 +11,7 @@ db.createCollection("collection_name")
 ```
 ## Show DBs
 ```javascript
-showdbs
+show dbs
 ```
 ```` Output
 Output:
