@@ -1,0 +1,78 @@
+We need to validate the datatypes so that we will get perfect data
+We will do this by createCollections
+Syntax
+```
+db.createCollection("students",{
+validator:{
+$jsonSchema:{
+required:["name","age"],title:"Student Object Validation",
+properties:{
+name:{
+bsonType:"string",
+description:"Name must be string and is required"},
+age:{
+bsonType:""int",
+minimum:5,
+maximum:20,
+description:"Age must be in range between 5 to 20"},
+course:{
+bsonType:"string
+enum:["BCA","BTech","BSc"],
+description:"Course  must be any one of this "}
+bsonType:"string","bool","int","double","array","Object","Date"
+String can use enum 
+Double and int we can use minimum  and  maximum  These are optional we can use either one of this also
+Array Also we can define bsontype of each items also
+Object WE can pass object within an object also 
+If we consider the object 
+address:{
+bsonType:"object",
+required:["street","city",'zipCode"],
+properties:{
+street:{
+bsonType:"string",
+description:"Street must be a string and is required"},
+city:{
+bsonType:"string",
+description:"City must be a string and is required"},
+zipCode:{
+bsonType:"string",
+description:"ZipCode must be a string and is required"}
+
+
+title is optional
+enum is used to tell which value should be choosen
+ db.students.insertOne({name:"YahooBAba",age:25, course:"Btech"})
+db.createCollection("students", {
+  validator: {
+    $jsonSchema: {
+      title: "student object validation",
+      required: ["name", "age", "course"],
+      properties: {
+        name: {
+          bsonType: "string",
+          description: "name is string and required"
+        },
+        age: {
+          bsonType: "int",
+          minimum: 5,
+          maximum: 20,
+          description: "age is integer and must be in range of 5 and 20"
+        },
+        course: {
+          bsonType: "string",
+          description: "course is string and required"
+        }
+      }
+    }
+  }
+});
+## Modifying an existing collection schema 
+db.runCommand({callMod:"students",
+validator:{
+$jsonSchema:{
+required:["name","age"],
+properties:{
+name:{
+bsonType:"string",
+description:"Name must be string and it is required"}}}}}),
