@@ -2,7 +2,7 @@
 # MongoDB Data Validation with `createCollection`
 
 When working with MongoDB, it's important to validate data types to ensure we store **perfect and consistent data**.  
-MongoDB allows schema validation using **`createCollection`** with `$jsonSchema`.
+MongoDB allows schema validation using **`createCollection`** with `$jsonSchema`. 
 
 ---
 
