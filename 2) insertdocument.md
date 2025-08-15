@@ -18,7 +18,7 @@ db.collections_name.insertMany([
 {field1:"Value", field2:value}])
 ```
 
-# findAll():
+# find():
 It is used to output all the details
 
 ## Syntax:
