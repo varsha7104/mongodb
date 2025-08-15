@@ -53,3 +53,5 @@ db.students.updateOne({ name: "Akshay Kumar" }, { $pull: { hobbies: "cricket" } 
 
 k) $addToSet – Adds a value to an array only if it doesn’t already exist.
 db.students.updateOne({ name: "Akshay Kumar" }, { $addToSet: { hobbies: "reading" } })
+## Replace
+db.collection_name.replaceOne({field:"Value",{$set:{"new field":value}})
