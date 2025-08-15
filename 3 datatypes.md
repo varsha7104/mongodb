@@ -178,3 +178,17 @@ _id: ObjectId("50f34345fsd08986")
 ```
 
 </details>
+```javascript
+db.personal.insertOne({name:"Yahoo Baba",//String
+age:25,//Integer
+married:false,//booolean
+dob:ISODate("2000-10-15T08:00:00Z")//UTC Format
+weight:75.6,
+kids:null,
+hobbies:["Sports","chess"]//array
+address:{music:"samayama",
+lyriclength:34,}//Objects
+
+})
+```
+
