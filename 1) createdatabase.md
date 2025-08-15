@@ -1,94 +1,150 @@
-Database is data stored in it 
-It is organised in files 
-Mangodb files are called collections
-collections contain actual data
-Collections contain document
-# How to create a database ?
+# 🗄️ MongoDB - Database Basics
+
+A **Database** is a collection of organized data.  
+In **MongoDB**:
+- Files are called **collections**.
+- **Collections** contain **documents** (actual data).
+
+---
+
+<details>
+<summary>1️⃣ Creating / Using a Database</summary>
+
+**Command:**  
+```javascript
 use database_name
-It is used to create a new database and we can use existing database
-```javascript
-db.createCollection("collection_name")
 ```
-## Show DBs
-```javascript
-show dbs
-```
-```` Output
-Output:
-admin
-config
-local
-````
-It is used to know the previous existing  database 
-## Use Database
+- Creates a **new database** (if it doesn't exist).
+- Switches to an **existing database** (if it exists).
+
+**Example:**
 ```javascript
 use school
 ```
-It creates a new database and switches to existing database if it exists
-## Creating the new collections
-we use createCollection to create a new collection
+
+---
+
+**Creating a New Collection:**
+```javascript
+db.createCollection("collection_name")
+```
+**Example:**
 ```javascript
 db.createCollection("school")
 ```
-Output:
-````
-{ok:1}
-````
-## Showing the collections:
-To show the existing collections 
+**Output:**
+```
+{ ok: 1 }
+```
+
+</details>
+
+---
+
+<details>
+<summary>2️⃣ Show Databases</summary>
+
+**Command:**
+```javascript
+show dbs
+```
+**Output:**
+```
+admin
+config
+local
+```
+- Shows all **existing databases**.
+
+</details>
+
+---
+
+<details>
+<summary>3️⃣ Show Collections</summary>
+
+**Command:**
 ```javascript
 show collections
 ```
-Output:
-````
-school
-````
-## Rename the collections
-We  can rename the collections by using rename collections
-```javascript
-db.students.renameCollections("student")
+**Output:**
 ```
-Output:
-````
-{ok:1}
-````
-## To know all the commands
-We can use db.help() which is used to know all the commands which can be used with the commands
+school
+```
+
+</details>
+
+---
+
+<details>
+<summary>4️⃣ Rename Collection</summary>
+
+**Command:**
+```javascript
+db.students.renameCollection("student")
+```
+**Output:**
+```
+{ ok: 1 }
+```
+
+</details>
+
+---
+
+<details>
+<summary>5️⃣ Help Commands</summary>
+
+**To list all database commands:**
 ```javascript
 db.help()
 ```
-Output:
-````
-all the commands
-````
-We can also use the db.[collection_name].help()
 
+**To list all commands for a specific collection:**
 ```javascript
 db.student.help()
 ```
-Output will contain all the commands related to collections
-## To remove the collections from the database 
+
+</details>
+
+---
+
+<details>
+<summary>6️⃣ Remove a Collection</summary>
+
+**Command:**
 ```javascript
 db.library.drop()
 ```
-Output:
-````
-true
-````
-True means it is removed
-```javascript
-db.showcollections
+**Output:**
 ```
-Output:
-````
-student
+true
+```
+`true` means the collection is removed.
 
-````
-## To drop the database
+**Example check after deletion:**
+```javascript
+show collections
+```
+**Output:**
+```
+student
+```
+
+</details>
+
+---
+
+<details>
+<summary>7️⃣ Drop a Database</summary>
+
+**Command:**
 ```javascript
 db.dropDatabase()
 ```
-Output:
-````
-{ok:1 ,dropped:'school'}
-````
+**Output:**
+```
+{ ok: 1, dropped: 'school' }
+```
+
+</details>
