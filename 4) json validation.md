@@ -118,3 +118,62 @@ db.students.insertOne({ name: "YahooBaba", age: 25, course: "BTech" })
 - `enum` is used to restrict values.
 - Nested objects can also have validation rules.
 - MongoDB validation ensures **clean, predictable, and safe** data.
+## Mongo DB runCommand()
+
+
+   In MongoDB, db.runCommand() is used to execute database commands directly — even those that don't have a helper method in the mongo shell.
+It’s like a “low-level” way to tell MongoDB:
+
+"Hey, execute this exact command and return the raw result."
+
+Syntax
+db.runCommand({ <command_name>: <value>, <option1>: <value1>, ... })
+
+
+<command_name> → Name of the MongoDB command (e.g., ping, collStats, find, aggregate, etc.).
+
+Options depend on the specific command.
+
+Example 1 — Check if MongoDB is running
+db.runCommand({ ping: 1 })
+
+
+Output:
+
+{ "ok" : 1 }
+
+
+✅ ok: 1 means the database is alive.
+
+Example 2 — Get statistics about a collection
+db.runCommand({ collStats: "students" })
+
+
+Output:
+
+{
+  "ns": "school.students",
+  "count": 5,
+  "size": 256,
+  "storageSize": 4096,
+  "ok": 1
+}
+
+
+count → Number of documents
+
+size → Total data size
+
+storageSize → Disk storage used
+
+Example 3 — Create a capped collection
+db.runCommand({
+  create: "logs",
+  capped: true,
+  size: 10000
+})
+
+
+Output:
+
+{ "ok": 1 }
