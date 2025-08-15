@@ -178,6 +178,8 @@ _id: ObjectId("50f34345fsd08986")
 ```
 
 </details>
+
+
 ```javascript
 db.personal.insertOne({name:"Yahoo Baba",//String
 age:25,//Integer
