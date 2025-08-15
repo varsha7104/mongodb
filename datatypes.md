@@ -1,28 +1,180 @@
-## Datatypes:
-Types of datatypes:
-1) string: Text which is "Quoted" ex: name:"Yahoo Baba"
-2) double:floatvalue ex:72.50
-3) 32-bit integer:
-   It differs by size .Numeric range -2147483648 to 2147483647 Uses 32 bit (4 bytes ) of memory to store the integer value
-5) 64- bit integer:Minimum Value: -9,223,372,036,854,775,808 uses 64 bit (8 bytes) of memory to store the integer value 
-Maximum Value: 9,223,372,036,854,775,807
-6) boolean:It contain either true or false
-7) array:It store same types of data
-   ex:hobbies :["music","sports"]
-8) object:We can store different types in datatypes  ex:address:{"street":"123 Main Street","city":"New York"}
-9) null
-10) regular expression :Which can specify conditions
-12) timestamp:lengthy numerical value just like date which is unreadable data 
-13) date:It stores date ex:dob:ISODate("2024-10-18T18:30:00Z) Starts with yearfollowed by month ,followed date T(menas time ) at last Z means coordinate universal time  .If we add at last 2hours before z it becomes central european time
+# 📌 Data Types Overview
+
+This README explains common data types, their memory usage, ranges, and examples.
+
+---
+
+<details>
+<summary>1️⃣ String</summary>
+
+**Definition:** Text enclosed in quotes.  
+
 ```javascript
-     dob:ISODate("2024-10-18T18:30:00Z") Coordinate Universal Time
-    dob:ISODate("2024-10-18T18:30:00+02:00")Central Eureopean time
-    dob:ISODate("2024-10-18T18:30:00-05:00") Eastern Standard Time
-    dob:ISODate("2024-10-18T18:30")Local Time 
-    ```
-```javascript
-dob=new Date("2024-1018T18:20:00Z")
-dob =new Date()
+name: "Yahoo Baba"
 ```
-15) object id: Unique id is generated when we create a document in the collection
-    ex:_id:ObjectId("50f34345fsd08986")
+
+</details>
+
+---
+
+<details>
+<summary>2️⃣ Double (Floating Point)</summary>
+
+**Definition:** A number with decimal values.  
+
+```javascript
+price: 72.50
+```
+
+</details>
+
+---
+
+<details>
+<summary>3️⃣ 32-bit Integer</summary>
+
+- **Size:** 4 bytes (32 bits)  
+- **Range:** `-2,147,483,648` to `2,147,483,647`  
+
+```javascript
+age: 25
+```
+
+</details>
+
+---
+
+<details>
+<summary>4️⃣ 64-bit Integer</summary>
+
+- **Size:** 8 bytes (64 bits)  
+- **Range:** `-9,223,372,036,854,775,808` to `9,223,372,036,854,775,807`  
+
+```javascript
+bigNumber: 9223372036854775807
+```
+
+</details>
+
+---
+
+<details>
+<summary>5️⃣ Boolean</summary>
+
+**Definition:** Holds `true` or `false`.  
+
+```javascript
+isActive: true
+```
+
+</details>
+
+---
+
+<details>
+<summary>6️⃣ Array</summary>
+
+**Definition:** Stores multiple values of the same type.  
+
+```javascript
+hobbies: ["music", "sports"]
+```
+
+</details>
+
+---
+
+<details>
+<summary>7️⃣ Object</summary>
+
+**Definition:** Stores different types of data together.  
+
+```javascript
+address: {
+    street: "123 Main Street",
+    city: "New York"
+}
+```
+
+</details>
+
+---
+
+<details>
+<summary>8️⃣ Null</summary>
+
+**Definition:** Represents an intentional empty value.  
+
+```javascript
+middleName: null
+```
+
+</details>
+
+---
+
+<details>
+<summary>9️⃣ Regular Expression</summary>
+
+**Definition:** Specifies pattern-matching conditions.  
+
+```javascript
+pattern: /^[A-Za-z0-9]+$/
+```
+
+</details>
+
+---
+
+<details>
+<summary>🔟 Timestamp</summary>
+
+**Definition:** A numeric value representing date/time (unreadable by humans).  
+
+```javascript
+createdAt: 1697591400
+```
+
+</details>
+
+---
+
+<details>
+<summary>1️⃣1️⃣ Date</summary>
+
+**Definition:** Stores date and time.  
+
+```javascript
+// Coordinated Universal Time (UTC)
+dob: ISODate("2024-10-18T18:30:00Z")
+
+// Central European Time (+02:00)
+dob: ISODate("2024-10-18T18:30:00+02:00")
+
+// Eastern Standard Time (-05:00)
+dob: ISODate("2024-10-18T18:30:00-05:00")
+
+// Local Time
+dob: ISODate("2024-10-18T18:30")
+```
+
+**JavaScript Date Object Examples:**
+```javascript
+dob = new Date("2024-10-18T18:20:00Z");
+dob = new Date(); // Current date and time
+```
+
+</details>
+
+---
+
+<details>
+<summary>1️⃣2️⃣ Object ID</summary>
+
+**Definition:** Unique identifier generated when creating a document in a database collection.  
+
+```javascript
+_id: ObjectId("50f34345fsd08986")
+```
+
+</details>
