@@ -15,6 +15,7 @@ db.collection_name.updateOne(
   { field: value },
   { $set: { update_field: "new_value" } }
 )
+```
 
 ## Syntax of Insert Many():
 ```
