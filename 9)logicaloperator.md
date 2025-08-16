@@ -1,0 +1,17 @@
+## Logical Operator
+When we want to get some specified conditions
+There are some logical operator
+1) $and: returns document where both queries match ```{$and:[condition1,condition2]}
+ex: {age:{$lt:20}} {"city":"New Delhi"}
+ex:db.students.find($and:[{age:25},{city:"New Delhi"}])
+It gives us the condition where age is less than 20 and city is new Delhi
+3) $or: returns document where any one od the condition is true
+ ex: {age:{$lt:20}} {"city":"New Delhi"}
+It gives us the condition where age is less than 20 and city is new Delhi
+3)$nor :returns the documents where both queries fail to match.
+{$nor:[condition1,condition2]}
+4) $not : returns document where the query does not match
+   {$not:[condition]}
+   ex: 
+db.students.find({"age":{$not:{$gt:25}}})
+db.students.find({and:[{course:"Btech"},{name:"Varsha"}]})
