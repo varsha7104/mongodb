@@ -23,3 +23,17 @@ db.find({field:"value"})
 ```
 db.find()
 ```
+##  Using find with projection:
+### Projection:
+Projection simply means which record should be reterived .
+#### syntax:
+```
+db.find({field:"value"},{field1:1,field2:1,field3:0})
+```
+Here 1 means which should be displayed . 0 means which should be avoided.
+----
+Another way of writing is :
+
+```
+db.collection_name.find().projection({field1:1,field2:1,field3:0})
+```
